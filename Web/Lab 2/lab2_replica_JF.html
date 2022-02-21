@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+
+<head>
+    <h1>Lab 2: Links and Forms</h1>
+</head>
+
+
+<body>
+    <div>
+<p>Created by: Joshua Fudge</p>
+<h2>Python Links</h2>
+<p>(These links all open in a new window)</p>
+
+<ul>
+
+    <li> <a href="https://www.realpython.com" target="_blank">RealPython</a>.</li>
+    
+    <li> <a href="https://docs.python.org/3/" target="_blank">Python 3.9.1 documentation</a> </li>
+
+    <li> <a href="https://xkcd.com/353/" target="_blank">xkcd Python comic</a></li>
+</ul>
+</div>
+
+
+<div>
+<h2>Contest Form</h2>
+
+<h3>Enter to win:</h3>
+
+
+<form action = '/contest'>
+
+<input type="text" placeholder="First Name" name="FName" required>
+<input type="text" placeholder="Last Name" name="LName" required>
+<input type="text" placeholder="Email Adress" name="Email" required>
+
+<p>How did you find out about us?</p>
+
+
+<label for="Friend"><input id="Friend" type="radio" name="how-find-out" value="Friend" checked> Friend</label>
+<label for="Online"><input id="Online" type="radio" name="how-find-out" value="Online" checked> Online</label>
+<label for="other"><input id="Other" type="radio" name="how-find-out" value="Other" checked> Other</label>
+
+<p>Answer this skill testing question correctly for a chance to win: 2 + 2 = ???</p>
+
+<input type="number" placeholder="Enter Answer" required>
+
+<button type="submit">Enter Contest</button>
+
+</form>
+
+</div>
+
+
+
+</body>
+
+</html>

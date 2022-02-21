@@ -1,0 +1,57 @@
+
+
+
+#legologo {
+
+width: 40%;
+border-color: black;
+border-style: solid;
+border-width: 25px;
+
+}
+
+.marioimg {
+
+width: 10%;    
+}
+
+
+.redbackground {
+
+
+    background-color: rgb(2, 1, 0);
+}
+
+
+
+.page-background {
+
+
+    background-color: rgb(61, 2, 223);
+}
+.white-text {
+
+    color: white;
+}
+
+
+
+
+.red-text {
+
+    color: red;
+}
+
+.yellow-text {
+
+    color: yellow;
+}
+
+#header-text {
+    
+    font-family: 'Space Mono', monospace;
+    color: white;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+}
