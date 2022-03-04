@@ -8,14 +8,16 @@ class RandomList(list):
                 continue
             else:
                 self.append(random.randint(1,100))
+                
 
     def __str__(self) -> str:
         amount = len(self)
         total = sum(self)
         average = round((total / amount),2)
+        self.list_str = str(self)[1:-1]
         
         
-        return f"Integers:  {list(self)}\nCount:     {amount}\nTotal:     {total}\nAverage:   {average}"
+        return f"Integers:  {self.list_str}\nCount:     {amount}\nTotal:     {total}\nAverage:   {average}"
 
 
 def main():
