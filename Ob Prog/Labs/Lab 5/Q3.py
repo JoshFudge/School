@@ -14,10 +14,10 @@ class RandomList(list):
         amount = len(self)
         total = sum(self)
         average = round((total / amount),2)
-        self.list_str = str(self)[1:-1]
         
         
-        return f"Integers:  {self.list_str}\nCount:     {amount}\nTotal:     {total}\nAverage:   {average}"
+        return f"Integers:  {tuple(self)}\nCount:     {amount}\nTotal:     {total}\nAverage:   {average}"
+        #If i dont put self with tuple or list it completely breaks so idk how to get it without the brackets
 
 
 def main():
