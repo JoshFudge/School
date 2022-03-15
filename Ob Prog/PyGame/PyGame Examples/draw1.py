@@ -26,14 +26,14 @@ pygame.draw.rect(screen, GREEN, (400, 60, 120, 100), 4)
 pygame.draw.rect(screen, BLUE, (450, 100, 120, 100), 8)
 
 # -- CIRCLES (ELLIPSES) -- #
-# screen.fill(background)
-# pygame.draw.ellipse(screen, RED, (50, 20, 160, 100))
-# pygame.draw.ellipse(screen, GREEN, (100, 60, 160, 100))
-# pygame.draw.ellipse(screen, BLUE, (150, 100, 160, 100))
+screen.fill(background)
+pygame.draw.ellipse(screen, RED, (50, 20, 160, 100))
+pygame.draw.ellipse(screen, GREEN, (100, 60, 160, 100))
+pygame.draw.ellipse(screen, BLUE, (150, 100, 160, 100))
 
-# pygame.draw.ellipse(screen, RED, (350, 20, 160, 100), 1)
-# pygame.draw.ellipse(screen, GREEN, (400, 60, 160, 100), 4)
-# pygame.draw.ellipse(screen, BLUE, (450, 100, 160, 100), 8)
+pygame.draw.ellipse(screen, RED, (350, 20, 160, 100), 1)
+pygame.draw.ellipse(screen, GREEN, (400, 60, 160, 100), 4)
+pygame.draw.ellipse(screen, BLUE, (450, 100, 160, 100), 8)
 
 pygame.display.update()  # update (redraw) the screen
 
