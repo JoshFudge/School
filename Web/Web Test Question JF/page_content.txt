@@ -1,0 +1,24 @@
+BWS
+
+Welcome to Beginner Web Services! At BWS, we create websites using only the finest introductory HTML and CSS basics.
+
+Paragraphs that have funky fonts? No problem.
+
+We can put borders around your lists. Just look!
+One
+Two
+Three
+
+Want links in your lists? Yeah, we do that.
+1. https://developer.mozilla.org/en-US/docs/Web/HTML
+2. https://developer.mozilla.org/en-US/docs/Web/CSS
+3. https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Resized images? Pleaze.
+[IMG]
+
+[FORM]
+What will we learn next? Sign with your email. Stay informed.
+[INPUT]
+[BUTTON]
+
