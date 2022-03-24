@@ -1,0 +1,51 @@
+"""Draw text to the screen."""
+
+#           3 steps
+# 1. create a Font object
+# 2. render the text into an image
+# 3. blit the image to the screen (or another Surface)
+
+from itertools import count
+import pygame
+from pygame.locals import *
+import time
+ 
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+
+BLACK = (0, 0, 0)
+WHITE = (235, 235, 235)
+GRAY = (200, 200, 200)
+DARK_BLUE = (35, 35, 155)
+DARK_RED = (145, 25, 26)
+
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+
+font = pygame.font.SysFont('consolas', 50)
+text_img = font.render("QUIT GAME", True, WHITE)
+text_img_rect = text_img.get_rect()
+text_img_rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
+quit_rect = pygame.Rect(0, 0, text_img_rect.w + 30, text_img_rect.h + 30)
+quit_rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
+running = True
+
+while running:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            running = False
+
+        elif event.type == MOUSEBUTTONUP:
+            if quit_rect.collidepoint(event.pos):
+                running = False
+                       
+    
+    screen.fill(GRAY)
+    pygame.draw.rect(screen, BLACK, quit_rect)
+    screen.blit(text_img, text_img_rect)
+
+    pygame.display.update()
+
+pygame.quit()

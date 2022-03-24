@@ -1,0 +1,194 @@
+
+
+from pygame import mixer
+import pygame
+from pygame.locals import *
+pygame.init()
+
+#Set some basic things
+height = 640
+width = 440
+screen = pygame.display.set_mode((height, width))
+WHITE = (255,255,255)
+BLACK = (0, 0, 0)
+GRAY = (128, 128, 128)
+FPS = 250
+
+background = BLACK
+pygame.display.set_caption(f"Woah its Pong!")
+clock = pygame.time.Clock()
+
+# 2 directions for the 2 players
+dir_1 = { K_UP: (0, -2.5), K_DOWN: (0, 2.5)}
+dir_2 = { K_LSHIFT: (0, -2.5), K_LCTRL: (0, 2.5)}
+
+
+# create the paddles and ball
+ball_speed = [2, 2]
+
+rect1= Rect(0 + 10, width/2,10,70)
+
+rect2= Rect(height-20, width/2,10,70)
+
+ball = Rect(height/2, width/2,10,10)
+
+
+
+
+
+player1_score = 0
+player2_score = 0
+
+
+font1 = pygame.font.SysFont('consolas', 50)
+
+
+text_img1 = font1.render(f'{player1_score}', True, WHITE)
+text_img2 = font1.render(f'{player2_score}', True, WHITE)
+
+
+quitButtontext_img = font1.render("QUIT GAME", True, WHITE)
+quitButton_img_rect = quitButtontext_img.get_rect()
+quit_rect = pygame.Rect(height* 19/48, 0, quitButton_img_rect.w , quitButton_img_rect.h +30)
+
+
+
+
+
+
+running = True
+while running:
+   hit_sound = mixer.Sound('boing.wav')
+      
+   for event in pygame.event.get():
+         if event.type == pygame.QUIT:
+               running = False
+
+   if event.type == KEYDOWN:
+         if event.key in dir_1:
+            v = dir_1[event.key]
+            rect2.move_ip(v)
+
+   if event.type == KEYDOWN:
+         if event.key in dir_2:
+            v2 = dir_2[event.key]
+            rect1.move_ip(v2)
+
+   if event.type == MOUSEBUTTONUP:
+            if quit_rect.collidepoint(event.pos):
+                running = False
+
+
+
+
+
+   if ball.left == 0:
+      ball_speed[0] *= -1
+      ball = Rect(height/2, width/2,10,10)
+      player2_score += 1
+      text_img2 = font1.render(f'{player2_score}', True, WHITE)
+      
+   if ball.right == height:
+      ball_speed[0] *= -1
+      ball = Rect(height/2, width/2,10,10)
+      player1_score += 1
+      text_img1 = font1.render(f'{player1_score}', True, WHITE)
+
+   ball.move_ip(ball_speed)
+
+   if ball.top < 0:
+         ball_speed[1] *= -1
+         hit_sound.play()
+
+   if ball.bottom > width:
+         ball_speed[1] *= -1
+         hit_sound.play()
+    
+    
+    
+   if ball.colliderect(rect2):
+        ball_speed[0] *= -1
+     
+
+   if ball.colliderect(rect1):
+        ball_speed[0] *= -1
+      
+
+
+
+   screen.fill(background)
+   pygame.draw.rect(screen, WHITE, rect1)
+   pygame.draw.rect(screen, WHITE, rect2)
+   pygame.draw.rect(screen, WHITE, ball)
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (1/80), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width/20, 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (1/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (3/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (5/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (7/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (9/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (11/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (13/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (15/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (17/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (19/20), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width/10, 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (2/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (3/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (4/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (5/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (6/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (7/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (8/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width * (9/10), 10, 10))
+   pygame.draw.ellipse(screen, WHITE, (height/2, width , 10, 10))
+
+
+ # if you want to have the quit button look good change the screen size to 1000 / 800 and uncomment the 2 lines below
+
+#    pygame.draw.rect(screen, GRAY, quit_rect)
+#    screen.blit(quitButtontext_img,quit_rect)
+
+
+   screen.blit(text_img1, (height/3, 0))
+   screen.blit(text_img2, (height * (2/3), 0))
+
+
+   pygame.display.flip()
+
+
+
+
+
+   clock.tick(FPS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pygame.quit()
