@@ -1,0 +1,39 @@
+.navbar {
+    margin: -1rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
+    font-size: 300%;
+    }
+    
+    li a:hover {
+    
+    color: turquoise;
+    font-style: italic;
+    }
+    
+    li a {
+    
+        color: white;
+    }
+
+img {
+    margin: 2rem;
+    float: left;
+}
+
+h1{
+
+    margin: 5rem;
+}
+@media (max-width: 600px) {
+
+    img {
+        float: none;
+        width: 50%;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

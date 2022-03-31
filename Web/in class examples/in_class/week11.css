@@ -1,0 +1,24 @@
+:root {
+    box-sizing: border-box;
+}
+
+.container {
+
+display: grid;
+
+
+}
+
+
+
+.box {
+    font-family: consolas;
+    font-size: 3rem;
+}
+
+.box1 { background-color: orange;}
+.box2 { background-color: rebeccapurple;}
+.box3 { background-color: red;}
+.box4 { background-color: orchid;}
+.box5 { background-color: yellowgreen;}
+.box6 { background-color: cyan;}

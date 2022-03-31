@@ -146,8 +146,8 @@ while running:
 
  # if you want to have the quit button look good change the screen size to 1000 / 800 and uncomment the 2 lines below
 
-#    pygame.draw.rect(screen, GRAY, quit_rect)
-#    screen.blit(quitButtontext_img,quit_rect)
+   # pygame.draw.rect(screen, GRAY, quit_rect)
+   # screen.blit(quitButtontext_img,quit_rect)
 
 
    screen.blit(text_img1, (height/3, 0))
